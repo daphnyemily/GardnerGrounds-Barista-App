@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Gardner Grounds</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="cashier.css" />
+</head>
+
+<a href="/login"><span class="fa fa-user"></span>Login</a>
+<a href="/signup"><span class="fa fa-user"></span>Signup</a>
+
+<body>
+    <section class="ggImg">
+        <img src="/img/logo.png" alt="GG Logo">
+       </section>
+
+    <div class="typewriter">
+        <h1>Welcome To Gardner Grounds.</h1>
+    </div>
+
+    <form action="/barista" method="POST">
+        <span id="cashier">
+            <section class="baristaAndCustomer">
+                <input type="text" value="" class="barista" name="barista" placeholder="Barista Name">
+                <input type="text" value="" class="name" name="customer" placeholder="Customer Name">
+            </section>
+
+            <section class="orderOptionsSection" >
+                <div id="orderOptions" class="drinks">
+                    <label for=""><strong>Beverage Choice: </strong></label>
+                    <br>
+                    <input type="radio" value="Kopi Coffee" name="beverage" />
+                    <label for="">Kopi Luwak Coffee</label>
+                    <br>
+                    <input type="radio" value="Fruit Tea" name="beverage" />
+                    <label for="">Passion Fruit Tea</label>
+                    <br>
+                    <input type="radio" value="Iced Latte" name="beverage" />
+                    <label for="">Iced Pumpkin Spice Latte</label>
+                </div>
+
+                <div id="orderOptions" class="size">
+                    <label for=""><strong>Beverage Size: </strong></label>
+                    <br>
+                    <input type="radio" value="Tall" name="size" />
+                    <label for="">Tall</label>
+                    <br>
+                    <input type="radio" value="Grande" name="size" />
+                    <label for="">Grande</label>
+                    <br>
+                    <input type="radio" value="Venti" name="size" />
+                    <label for="">Venti</label>
+                </div>
+            </section>
+
+            <section class="submitOrderSection">
+                <button class="submitOrder" type="submit">Submit</button>   
+            </section>            
+
+            <!-- <button type="submit">Submit</button> -->
+    </form>
+
+    <% if (locals.success) { %>
+        <span class="orderPlaced"> Order placed!</span>
+         <% } %> 
+    
+</body>
+
+</html>
