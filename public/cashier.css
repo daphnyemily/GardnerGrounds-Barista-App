@@ -16,32 +16,33 @@ body {
 .clear {
  clear: both;
 }
+.clearfix {
+  overflow: auto;
+}
 
 /******************************************
 /* LAYOUT
 /*******************************************/
+body{
+  color: white;
+  background-color: #432818;
+  margin-left: 1%;
+}
 a{
   color: #432818;
-  font-size: 25px;
+  font-size: 19px;
   border: 1px solid white;
   background-color: white;
-  /* margin: 0 1% 0 1%; */
   border-radius: 5px;
   text-decoration: none;
   float: right;
   text-align: center;
-  margin-right: 1%;
-}
-body{
-  margin-top: 40px;
-  word-wrap: break-word;
-  color: white;
-  background-color: #432818;
+  margin: 15px 10px 0 0;
+  width: 100px;
 }
 h1{
-  font-size: 35px;
+  font-size: 45px;
   text-align: center;
-  margin-top: -2%;
   clear: both;
 }
 img{
@@ -50,9 +51,6 @@ img{
 .ggImg{
   display: flex;
   justify-content: center;
-}
-label{
-  font-size: 15px;
 }
 .name, .barista{
   height: 3em;
@@ -70,38 +68,43 @@ a:hover,.name:hover,.barista:hover,.submitOrder:hover{
 }
 .baristaAndCustomer{
   text-align: center;
+  clear: both;
+  margin-bottom: 1em;
 }
-.drinks,.size{
+#orderOptions{
   width: 20%;
-  /* float: left; */
   border: 2px solid rgb(228,171,34);
   border-radius: 15px;
-  padding: 20px;
-  font-size: -2px;
+  padding: 15px;
+  font-size: 16px;
   background: rgba(255,244,238,0.50);
   box-shadow: 5px 5px 4px black;
-  margin: 3em 1em 2em 1em;
+  margin: 1em 1em 0 1em;
+}
+#size{
+  background: rgba(255,244,238,0.50);
 }
 .submitOrder{
   color: #432818;
   font-size: 25px;
   border: 1px solid white;
   background-color: white;
-  margin-left: 1%;
   border-radius: 5px;
   text-decoration: none;
   text-align: center;
-  width: 35em;
-  height: 1.5em;
+  width: 10%;
+  float: left;
+  margin: 2em 1em 0 3em;
+  height: 13em;
 }
 .submitOrderSection{
   text-align: center;
 }
 .orderOptionsSection{
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
 }
-span .orderPlaced{
+.orderPlaced{
   font-size: 35px;
   text-align: center;
   display: block;
@@ -131,3 +134,4 @@ span .orderPlaced{
   from, to { border-color: transparent }
   50% { border-color: rgb(228,171,34)}
 }
+

@@ -1,70 +1,199 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-    <title>Gardner Grounds</title>
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="cashier.css" />
-</head>
+    <head>
+        <title>Gardner Grounds</title>
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <link rel="stylesheet" href="cashier.css" />
+    </head>
 
-<a href="/login"><span class="fa fa-user"></span>Login</a>
-<a href="/signup"><span class="fa fa-user"></span>Signup</a>
+    <body>
+        <a href="/login"><span class="fa fa-user"></span>Login</a>
+        <a href="/signup"><span class="fa fa-user"></span>Signup</a>
 
-<body>
-    <section class="ggImg">
-        <img src="/img/logo.png" alt="GG Logo">
-       </section>
+        <section class="ggImg">
+            <img src="/img/logo.png" alt="GG Logo">
+        </section>
 
-    <div class="typewriter">
-        <h1>Welcome To Gardner Grounds.</h1>
-    </div>
+        <section class="typewriter">
+            <h1>Welcome To Gardner Grounds.</h1>
+        </section>
 
-    <form action="/barista" method="POST">
-        <span id="cashier">
+        <form action="/barista" method="POST">
+            <span id="cashier">
             <section class="baristaAndCustomer">
-                <input type="text" value="" class="barista" name="barista" placeholder="Barista Name">
-                <input type="text" value="" class="name" name="customer" placeholder="Customer Name">
+                <input type="text" required value="" class="barista" name="barista" placeholder="Barista Name">
+                <input type="text" required value="" class="name" name="customer" placeholder="Customer Name">
             </section>
+
+            <section class="submitOrderSection">
+                <button class="submitOrder" required type="submit">Submit Order            <% if (locals.success) { %>
+                    <span class="orderPlaced"> Order placed!</span>
+        <% } %> </button>   
+            </section>  
 
             <section class="orderOptionsSection" >
                 <div id="orderOptions" class="drinks">
-                    <label for=""><strong>Beverage Choice: </strong></label>
+                    <label for=""><strong>Specialty Drinks: </strong></label>
                     <br>
                     <input type="radio" value="Kopi Coffee" name="beverage" />
                     <label for="">Kopi Luwak Coffee</label>
                     <br>
-                    <input type="radio" value="Fruit Tea" name="beverage" />
+                    <input type="radio" value="Kopi Iced" name="beverage" />
+                    <label for="">Kopi Luwak Iced Coffee</label>
+                    <br>
+                    <input type="radio" value="Kopi Luwak Cold Brew" name="beverage" />
+                    <label for="">Kopi Luwak Cold Brew</label>
+
+                    <div id="size" class="size">
+                        <label for=""><strong>Size: </strong></label>
+                        <br>
+                        <input type="radio"  value="Tall" name="size" />
+                        <label for="">Tall</label>
+                        <input type="radio"  value="Grande" name="size" />
+                        <label for="">Grande</label>
+                        <input type="radio"  value="Venti" name="size" />
+                        <label for="">Venti</label>
+                    </div>
+                </div>
+
+                <div id="orderOptions" class="coffee">
+                    <label for=""><strong>Coffee: </strong></label>
+                    <br>
+                    <input type="radio" value="Local Roast" name="coffee" />
+                    <label for="">Local Roast</label>
+                    <br>
+                    <input type="radio" value="Medium Blend" name="coffee" />
+                    <label for="">Medium Blend</label>
+                    <br>
+                    <input type="radio" value="Dark Roast" name="coffee" />
+                    <label for="">Dark Roast</label>
+
+                    <div id="size" class="sizeCoffee">
+                        <label for=""><strong>Size: </strong></label>
+                        <br>
+                        <input type="radio"  value="Tall" name="sizeCoffee" />
+                        <label for="">Tall</label>
+                        <input type="radio"  value="Grande" name="sizeCoffee" />
+                        <label for="">Grande</label>
+                        <input type="radio"  value="Venti" name="sizeCoffee" />
+                        <label for="">Venti</label>
+                    </div>
+                </div>
+
+                <div id="orderOptions" class="dairy">
+                    <label for=""><strong>Dairy / Non Dairy Options: </strong></label>
+                    <br>
+                    <input type="radio" required value="Whole Milk" name="dairy" />
+                    <label for="">Whole Milk</label>
+                    <br>
+                    <input type="radio" required value="Fat Free Milk" name="dairy" />
+                    <label for="">Fat Free Milk</label>
+                    <br>
+                    <input type="radio" required value="Cream" name="dairy" />
+                    <label for="">Cream</label>
+                    <br>
+                    <input type="radio" required value="Almond Milk" name="dairy" />
+                    <label for="">Almond Milk</label>
+                    <br>
+                    <input type="radio" required value="Coconut Milk" name="dairy" />
+                    <label for="">Coconut Milk</label>
+                    <br>
+                    <input type="radio" required value="Oat Milk" name="dairy" />
+                    <label for="">Oat Milk</label>
+                    <br>
+                    <input type="radio" required value="None" name="dairy" />
+                    <label for="">None</label>
+                </div>
+
+                <div id="orderOptions" class="toppings">
+                    <label for=""><strong>Special Toppings: </strong></label>
+                    <br>
+                    <input type="checkbox" value="Whipped Cream" name="toppings" />
+                    <label for="">Whipped Cream</label>
+                    <br>
+                    <input type="checkbox" value="Cold Foam" name="toppings" />
+                    <label for="">Cold Foam</label>
+                    <br>
+                    <input type="checkbox" value="Mocha Drizzle" name="toppings" />
+                    <label for="">Mocha Drizzle</label>
+                    <br>
+                    <input type="checkbox" value="MCaramel Drizzle" name="toppings" />
+                    <label for="">Caramel Drizzle</label>
+                </div>  
+
+                <div id="orderOptions" class="espresso">
+                    <label for=""><strong>Espresso: </strong></label>
+                    <br>
+                    <input type="radio" value="1 shot" name="espresso" />
+                    <label for="">1 shot</label>
+                    <br>
+                    <input type="radio" value="2 shots" name="espresso" />
+                    <label for="">2 shots</label>
+                    <br>
+                    <input type="radio" value="3 shots" name="espresso" />
+                    <label for="">3 shots</label>
+                </div>
+                <div id="orderOptions" class="tea">
+                    <label for=""><strong>Tea: </strong></label>
+                    <br>
+                    <input type="radio" value="Green Tea" name="tea" />
+                    <label for="">Green Tea</label>
+                    <br>
+                    <input type="radio" value="Passion Fruit Tea" name="tea" />
                     <label for="">Passion Fruit Tea</label>
                     <br>
-                    <input type="radio" value="Iced Latte" name="beverage" />
+                    <input type="radio" value="Black Tea" name="tea" />
+                    <label for="">Black Tea</label>
+
+                    <div id="size" class="sizeTea">
+                        <label for=""><strong>Size: </strong></label>
+                        <br>
+                        <input type="radio"  value="Tall" name="sizeTea" />
+                        <label for="">Tall</label>
+                        <input type="radio"  value="Grande" name="sizeTea" />
+                        <label for="">Grande</label>
+                        <input type="radio"  value="Venti" name="sizeTea" />
+                        <label for="">Venti</label>
+                    </div>
+                </div>
+                <div id="orderOptions" class="seasonal">
+                    <label for=""><strong>Seasonal Options: </strong></label>
+                    <br>
+                    <input type="radio" value="Kopi Mocha Latte" name="seasonal" />
+                    <label for="">Kopi Mocha Latte</label>
+                    <br>
+                    <input type="radio" value="Peppermint Patty Latte" name="seasonal" />
+                    <label for="">Peppermint Patty Latte</label>
+                    <br>
+                    <input type="radio" value="Iced Pumpkin Spice Latte" name="seasonal" />
                     <label for="">Iced Pumpkin Spice Latte</label>
+
+                    <div id="size" class="sizeSeasonal">
+                        <label for=""><strong>Size: </strong></label>
+                        <br>
+                        <input type="radio"  value="Tall" name="sizeSeasonal" />
+                        <label for="">Tall</label>
+                        <input type="radio"  value="Grande" name="sizeSeasonal" />
+                        <label for="">Grande</label>
+                        <input type="radio"  value="Venti" name="sizeSeasonal" />
+                        <label for="">Venti</label>
+                    </div>
                 </div>
 
-                <div id="orderOptions" class="size">
-                    <label for=""><strong>Beverage Size: </strong></label>
+                <div id="orderOptions" class="allergens">
+                    <label for=""><strong>Any Allergies: </strong></label>
                     <br>
-                    <input type="radio" value="Tall" name="size" />
-                    <label for="">Tall</label>
-                    <br>
-                    <input type="radio" value="Grande" name="size" />
-                    <label for="">Grande</label>
-                    <br>
-                    <input type="radio" value="Venti" name="size" />
-                    <label for="">Venti</label>
+                    <input type="text" placeholder="type here" value="" name="allergens" />
+                    <!-- <label for="">Tall</label> -->
                 </div>
-            </section>
+            </section>     
 
-            <section class="submitOrderSection">
-                <button class="submitOrder" type="submit">Submit</button>   
-            </section>            
-
-            <!-- <button type="submit">Submit</button> -->
-    </form>
-
-    <% if (locals.success) { %>
-        <span class="orderPlaced"> Order placed!</span>
-         <% } %> 
-    
-</body>
+            <!-- <section class="submitOrderSection">
+                <button class="submitOrder" required type="submit">Submit Order</button>   
+            </section>    -->
+            </form>
+    </body>
 
 </html>

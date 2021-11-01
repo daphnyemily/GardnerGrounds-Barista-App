@@ -24,6 +24,9 @@ body {
 h1{
   text-align: center;
 }
+label{
+  font-size: 25px;
+}
 body{
   font-size: 30px;
 }
@@ -35,4 +38,11 @@ button{
   border-radius: 5px;
   text-decoration: none;
   text-align: center;
+}
+p{
+  margin-top: 15px;
+  font-size: 20px;
+}
+a{
+  color: rgb(228,171,34);
 }

@@ -19,12 +19,22 @@
             <% for(let i=0; i<awaiting.length; i++) {%>
             <% console.log(awaiting[i]) %>
             <% if(awaiting[i].awaiting === true){ %>
-                  <li id="await" class="barista2">Barista: <%= awaiting[i].barista %>
+               <li id="await" class="barista2">Barista: <%= awaiting[i].barista %>
                   <span class="customer2">Customer: <%= awaiting[i].customer %></span>
                   <span class="beverage2">Beverage: <%= awaiting[i]['beverage'] %></span>
                   <span class="size2">Size: <%= awaiting[i]['size'] %></span>
+                  <span class="coffee2">Coffee: <%= awaiting[i]['coffee'] %></span>
+                  <span class="size2">Size: <%= awaiting[i]['sizeCoffee'] %></span>
+                  <span class="dairy2">Dairy: <%= awaiting[i]['dairy'] %></span>
+                  <span class="toppings2">Toppings: <%= awaiting[i]['toppings'] %></span>
+                  <span class="espresso2">Espresso: <%= awaiting[i]['espresso'] %></span>
+                  <span class="tea2">Tea: <%= awaiting[i]['tea'] %></span>
+                  <span class="size2">Size: <%= awaiting[i]['sizeTea'] %></span>
+                  <span class="seasonal2">Seasonal: <%= awaiting[i]['seasonal'] %></span>
+                  <span class="size2">Size: <%= awaiting[i]['sizeSeasonal'] %></span>
+                  <span class="allergens2">Allergies: <%= awaiting[i]['allergens'] %></span>
                   <button id="<%= awaiting[i]._id %>" value="<%= awaiting[i].customer %>" class="complete-order">Complete Order</button>
-            </li>
+               </li>
              <% } %>
             <% } %> 
          </ul>
@@ -37,15 +47,25 @@
          <div class="completedOrders">
             <ul>
             <% for(let i=0; i<completed.length; i++) {%>
-               <li id ="complete" class="barista2">Barista: <%= completed[i].barista %>
-               <span class="customer2">Customer: <%= completed[i].customer %></span>
-               <span class="beverage2">Beverage: <%= completed[i]['beverage'] %></span>
-               <span class="size2">Size: <%= completed[i]['size'] %></span>
+               <li id ="complete" class="barista2">Barista:    <%= completed[i].barista %>
+                  <span class="customer2">Customer: <%= awaiting[i].customer %></span>
+                  <span class="beverage2">Beverage: <%= awaiting[i]['beverage'] %></span>
+                  <span class="size2">Size: <%= awaiting[i]['size'] %></span>
+                  <span class="coffee2">Coffee: <%= awaiting[i]['coffee'] %></span>
+                  <span class="size2">Size: <%= awaiting[i]['sizeCoffee'] %></span>
+                  <span class="dairy2">Dairy: <%= awaiting[i]['dairy'] %></span>
+                  <span class="toppings2">Toppings: <%= awaiting[i]['toppings'] %></span>
+                  <span class="espresso2">Espresso: <%= awaiting[i]['espresso'] %></span>
+                  <span class="tea2">Tea: <%= awaiting[i]['tea'] %></span>
+                  <span class="size2">Size: <%= awaiting[i]['sizeTea'] %></span>
+                  <span class="seasonal2">Seasonal: <%= awaiting[i]['seasonal'] %></span>
+                  <span class="size2">Size: <%= awaiting[i]['sizeSeasonal'] %></span>
+                  <span class="allergens2">Allergies: <%= awaiting[i]['allergens'] %></span>
                </li>
             <% } %>
          </ul>
          </div>
-         </div>
+         
    </section>
 
          

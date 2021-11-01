@@ -17,7 +17,7 @@ const completedOrder = (e) => {
     return res.json()
   })
   .then(function (res) {
-    window.speechSynthesis.speak(new SpeechSynthesisUtterance(res.value.size +" "+ res.value.beverage + " for " + res.value.customer));
+    window.speechSynthesis.speak(new SpeechSynthesisUtterance(" order for " + res.value.customer));
   })
   window.location.reload();
 };
@@ -43,3 +43,4 @@ const deleteAllCompleted = (e) => {
 document.querySelectorAll('.clear-all-completed').forEach((e) => {
   e.addEventListener('click', deleteAllCompleted);
 });
+
