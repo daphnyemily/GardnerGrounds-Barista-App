@@ -34,7 +34,7 @@ module.exports = function (app, passport, db, ObjectId) {
   // message board routes ===============================================================
 
   app.post('/barista', (req, res) => {
-    const {
+    let {
       barista,
       customer,
       beverage,

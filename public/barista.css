@@ -83,7 +83,6 @@ h3{
   display: grid;
 }
 li{
-  height: 400px;
   display: flex;
   float: left;
   border: 2px solid rgb(228,171,34);
